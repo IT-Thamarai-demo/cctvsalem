@@ -1,0 +1,116 @@
+/* Light Mode Defaults */
+:root {
+  --bg-color: #f5f7fa;
+  --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+  --text-color: #212529;
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.125);
+  --input-bg: #f8f9fa;
+  --primary-color: #4361ee;
+  --primary-hover: #3a56d4;
+  --list-hover: #f8f9fa;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+  --bg-color: #1a1a2e;
+  --bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  --text-color: #f8f9fa;
+  --card-bg: #2d2d44;
+  --card-border: #444;
+  --input-bg: #3d3d5a;
+  --primary-color: #4a6bff;
+  --primary-hover: #3a56d4;
+  --list-hover: #3d3d5a;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Base Styles */
+.app-background {
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--card-bg);
+  border-color: var(--card-border);
+  color: var(--text-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px var(--shadow-color) !important;
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* List Group Styles */
+.list-group-item {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-color: var(--card-border);
+  transition: all 0.2s ease;
+}
+
+.list-group-item:hover {
+  background-color: var(--list-hover) !important;
+}
+
+/* Form Controls */
+.form-control, .form-select {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border-color: var(--card-border);
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-background {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Additional Dark Mode Elements */
+.navbar, .footer {
+  background-color: var(--card-bg);
+  border-color: var(--card-border);
+}
+
+.text-muted {
+  color: var(--text-color) !important;
+  opacity: 0.8;
+}
+
+/* Smooth theme transition */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
