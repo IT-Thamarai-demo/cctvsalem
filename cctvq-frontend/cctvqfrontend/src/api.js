@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:5000/api' });
+const API = axios.create({ baseURL: 'https://cctvsalem.onrender.com' });
 
 export const fetchQuotations = () => API.get('/quotations');
 export const createQuotation = (data) => API.post('/quotations', data);
